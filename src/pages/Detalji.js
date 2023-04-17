@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-function Detalji() {
+const Detalji=({location,setLocation})=> {
+ 
+    let currentLocation = useLocation();
+  
+    useEffect(() => {
+      setLocation(currentLocation.pathname);
+    }, []);
   return (
     <div>
       <section className="bg-light py-5 text-dark d-flex flex-column justify-content-center align-items-center">
