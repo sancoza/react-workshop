@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-const Home = ({ location, setLocation }) => {
+const Home = ({ setLocation }) => {
   let currentLocation = useLocation();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Home = ({ location, setLocation }) => {
 
         <div className="col-sm-3">
           <select className="form-select form-select-lg">
-            <option selected>Mesec...</option>
+            <option defaultValue={'Mesec'}>Mesec...</option>
             <option value="1">Oktobar</option>
             <option value="2">Novembar</option>
             <option value="3">Decembar</option>
@@ -32,7 +32,7 @@ const Home = ({ location, setLocation }) => {
 
         <div className="col-sm-3">
           <select className="form-select form-select-lg">
-            <option selected>Sortiraj...</option>
+            <option defaultValue={'Sortiraj'}>Sortiraj...</option>
             <option value="1">Opadajuce</option>
             <option value="2">Rastuce</option>
           </select>
