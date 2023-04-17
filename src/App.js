@@ -10,6 +10,8 @@ import NotFound from './pages/NotFound';
 
 const App = () => {
   const [location, setLocation] = useState('/');
+  const [searchDestionation, setSearchDestionation] = useState('');
+  const [sortiranje, setSortiranje] = useState('');
   const [putovanja, setPutovanja] = useState([
     {
       destinacija: 'Dominikana',
@@ -74,7 +76,7 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={<Home setLocation={setLocation} />}
+            element={<Home setLocation={setLocation} searchDestionation={searchDestionation} setSearchDestionation={setSearchDestionation} sortiranje={sortiranje} setSortiranje={setSortiranje} />}
           />
           <Route
             path="/putovanja"
@@ -83,7 +85,9 @@ const App = () => {
                 
                 setLocation={setLocation}
                 putovanja={putovanja}
-                
+                searchDestionation={searchDestionation}
+                setSearchDestionation={setSearchDestionation}
+                sortiranje={sortiranje} setSortiranje={setSortiranje} 
               />
             }
           />

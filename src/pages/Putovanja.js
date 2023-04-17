@@ -1,20 +1,45 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
+import filter from '../utilities/filter';
 
-const Putovanja = ({ setLocation, putovanja }) => {
+const Putovanja = ({
+  setLocation,
+  putovanja,
+  searchDestionation,
+  setSearchDestionation,
+  sortiranje,
+  setSortiranje,
+}) => {
+  const [prikazPutovanja, setPrikazPutovanja] = useState([]);
+
   let currentLocation = useLocation();
 
   useEffect(() => {
     setLocation(currentLocation.pathname);
-  }, []);
+    let temp = filter(searchDestionation, putovanja, sortiranje);
+    setPrikazPutovanja([...temp]);
+  }, [searchDestionation, putovanja, sortiranje, currentLocation, setLocation]);
+
+  const pretraga = (event) => {
+    event.preventDefault();
+
+    let temp = filter(putovanja, searchDestionation, sortiranje);
+    setPrikazPutovanja([...temp]);
+  };
+
   return (
     <div>
       <section className="bg-light py-5 text-dark d-flex flex-column justify-content-center align-items-center">
         <h1 className="fw-bold display-5">Gde zelite da putujete?</h1>
         <p>Pretrazite nasu veliku ponudu premium putovanja</p>
-        <form className="row gx-3 gy-2 align-items-center container">
+        <form
+          onSubmit={(event) => pretraga(event)}
+          className="row gx-3 gy-2 align-items-center container"
+        >
           <div className="col-sm-3">
             <input
+              value={searchDestionation}
+              onChange={(e) => setSearchDestionation(e.target.value)}
               type="text"
               className="form-control form-control-lg"
               placeholder="Destinacija"
@@ -31,7 +56,11 @@ const Putovanja = ({ setLocation, putovanja }) => {
           </div>
 
           <div className="col-sm-3">
-            <select className="form-select form-select-lg">
+            <select
+              value={sortiranje}
+              onChange={(e) => setSortiranje(e.target.value)}
+              className="form-select form-select-lg"
+            >
               <option defaultValue={'Sortiraj'}>Sortiraj...</option>
               <option value="1">Opadajuce</option>
               <option value="2">Rastuce</option>
@@ -48,7 +77,7 @@ const Putovanja = ({ setLocation, putovanja }) => {
 
       <section className="container pregled-putovanja py-5">
         <div className="row row-cols-1 row-cols-md-3 g-4">
-          {putovanja.map((putovanje, index) => {
+          {prikazPutovanja.map((putovanje, index) => {
             return (
               <div className="col" key={index}>
                 <div className="card h-100">
@@ -74,7 +103,9 @@ const Putovanja = ({ setLocation, putovanja }) => {
                       </li>
                     </ul>
                   </div>
-                  <Link className="btn btn-danger m-2" to={`/detalji/${index}`}>Detaljnije</Link>
+                  <Link className="btn btn-danger m-2" to={`/detalji/${index}`}>
+                    Detaljnije
+                  </Link>
                 </div>
               </div>
             );
