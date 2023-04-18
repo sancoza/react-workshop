@@ -40,34 +40,34 @@ const App = () => {
       cena: 2000,
       ocena: 5,
     },
-    {
-      destinacija: 'Italija',
-      naslov: 'Probaj Italijansku pizzu i testeninu...',
-      opis: 'Smeštena je na jugu Evrope u samom srcu Mediterana. Obuhvata Apeninsko poluostrvo i tri velika ostrva na Sredozemnom moru: Sardiniju, Elbu i Siciliju.',
-      img: 'italija.jpg',
-      datumPolaska: '2023-05-01',
-      cena: 350,
-      ocena: 3,
-    },
-    {
-      destinacija: 'Maldivi',
-      naslov: 'Maldivi Raj na zemlji...',
-      opis: 'Majušna ostrvska država u Indijskom okeanu, popularna destinacija za medeci mesec, poznata je po nestvarno lepim plažama sa belim peskom, kućicama na vodi i plivanju sa kit ajkulama. ',
-      img: 'maldivi.jpg',
-      datumPolaska: '2023-06-20',
-      cena: 1500,
-      ocena: 5,
-    },
-    {
-      destinacija: 'Dubai',
-      naslov:
-        'Ujedinjeni Arapski Emirati, jedna je od najpopularnijih zemalja koje treba posetiti na Bliskom istoku...',
-      opis: 'Ujedinjeni Arapski Emirati, poznatiji kao UAE. Ako nikada niste bili tamo, sigurno propuštate jedan od najboljih doživljaja koji mogu da vam se dese u životu. UAE su nesumnjivo jedna od najpopularnijih turističkih destinacija na svetu.',
-      img: 'uae.jpg',
-      datumPolaska: '2023-12-29',
-      cena: 600,
-      ocena: 4,
-    },
+    // {
+    //   destinacija: 'Italija',
+    //   naslov: 'Probaj Italijansku pizzu i testeninu...',
+    //   opis: 'Smeštena je na jugu Evrope u samom srcu Mediterana. Obuhvata Apeninsko poluostrvo i tri velika ostrva na Sredozemnom moru: Sardiniju, Elbu i Siciliju.',
+    //   img: 'italija.jpg',
+    //   datumPolaska: '2023-05-01',
+    //   cena: 350,
+    //   ocena: 3,
+    // },
+    // {
+    //   destinacija: 'Maldivi',
+    //   naslov: 'Maldivi Raj na zemlji...',
+    //   opis: 'Majušna ostrvska država u Indijskom okeanu, popularna destinacija za medeci mesec, poznata je po nestvarno lepim plažama sa belim peskom, kućicama na vodi i plivanju sa kit ajkulama. ',
+    //   img: 'maldivi.jpg',
+    //   datumPolaska: '2023-06-20',
+    //   cena: 1500,
+    //   ocena: 5,
+    // },
+    // {
+    //   destinacija: 'Dubai',
+    //   naslov:
+    //     'Ujedinjeni Arapski Emirati, jedna je od najpopularnijih zemalja koje treba posetiti na Bliskom istoku...',
+    //   opis: 'Ujedinjeni Arapski Emirati, poznatiji kao UAE. Ako nikada niste bili tamo, sigurno propuštate jedan od najboljih doživljaja koji mogu da vam se dese u životu. UAE su nesumnjivo jedna od najpopularnijih turističkih destinacija na svetu.',
+    //   img: 'uae.jpg',
+    //   datumPolaska: '2023-12-29',
+    //   cena: 600,
+    //   ocena: 4,
+    // },
   ]);
   return (
     <BrowserRouter>
